@@ -5,7 +5,7 @@ from sys import stdin as sys_stdin, stderr as sys_stderr, stdout as sys_stdout
 class CommunicationChannels:
     def __init__(self, *, stdout: BinaryIO = sys_stdout, stderr : BinaryIO = sys_stderr, stdin : BinaryIO = sys_stdin) -> None:
         self.stdin = stdin
-        self.stdout = stdin
+        self.stdout = stdout
         self.stderr = stderr
 
 class ProcessCommunicationEventHandler:
