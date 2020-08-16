@@ -20,7 +20,7 @@ setup(
     packages=find_packages(where="src"),
     url = 'https://github.com/carstencodes/supervisor-console',
     install_requires=[
-        "supervisord >= 4.0"
+        "supervisor >= 4.0"
     ],
     classifiers = [
         'Development Status :: 4 - Beta',
