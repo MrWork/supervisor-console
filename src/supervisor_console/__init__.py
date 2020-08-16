@@ -6,14 +6,14 @@ from datetime import datetime
 
 __log_format="{processname} | {timestamp::%Y-%m-%d %H:%M:%S} | {time}"
 
-__CHANNEL_MAP : Dict[str, BinaryIO] = dict(stdout = stdout, stderr = stderr)
-__options = ServerOptions()
-__options.add('logformat', 'supervisorconsole.logformat', handler=__set_log_format, default=__log_format, env="SUPERVISOR_CONSOLE_LOGFMT")
-__options.realize()
+#def __set_log_format(value: str) -> None:
+#    if value:
+#        __log_format = value
 
-def __set_log_format(value: str) -> None:
-    if value:
-        __log_format = value
+__CHANNEL_MAP : Dict[str, BinaryIO] = dict(stdout = stdout, stderr = stderr)
+#__options = ServerOptions()
+#__options.add('logformat', 'supervisorconsole.logformat', handler=__set_log_format, default=__log_format, env="SUPERVISOR_CONSOLE_LOGFMT")
+#__options.realize()
 
 def event_handler(event : Event, response : str) -> None:
     header_line, data = response.split('\n', 1)
