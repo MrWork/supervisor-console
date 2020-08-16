@@ -2,37 +2,46 @@
 # -*- coding: iso-8859-1 -*-
 import os
 
-from setuptools import setup
+from setuptools import setup, find_namespace_packages
+
+_Version='0.4.0'
 
 setup(
-    name = 'supervisor-stdout',
-    version = '0.1.1',
-    py_modules = ['supervisor_stdout'],
-
-    author = 'Noah Kantrowitz',
-    author_email = 'noah@coderanger.net',
+    name = 'supervisor-console',
+    version = _Version,
+    py_modules = ['supervisor_console'],
+    author = 'Carsten Igel',
+    author_email = 'cig@bite-that-bit.de',
     description = '',
-    long_description = open(os.path.join(os.path.dirname(__file__), 'README.md')).read(),
-    license = 'BSD',
+    long_description = '',
+    license = 'BSD-3-Clause',
     keywords = '',
-    url = 'https://github.com/coderanger/supervisor-stdout',
+    package_dir={"": "src"},
+    packages=find_namespace_packages(where="src"),
+    url = 'https://github.com/carstencodes/supervisor-console',
+    install_requires=[
+        "supervisord >= 4.0"
+    ],
     classifiers = [
-        'Development Status :: 1 - Planning',
-        # 'Development Status :: 2 - Pre-Alpha',
-        # 'Development Status :: 3 - Alpha',
-        # 'Development Status :: 4 - Beta',
-        # 'Development Status :: 5 - Production/Stable',
-        # 'Development Status :: 6 - Mature',
-        # 'Development Status :: 7 - Inactive',
-        'Environment :: Web Environment',
+        'Development Status :: 4 - Beta',
+        'Environment :: Console',
         'License :: OSI Approved :: BSD License',
         'Natural Language :: English',
-        'Operating System :: OS Independent',
-        'Programming Language :: Python',
+        'Operating System :: POSIX :: Linux',
+        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Topic :: Internet :: Log Analysis',
+        'Topic :: System',
+        'Topic :: System :: Boot',
+        'Topic :: System :: Boot :: Init',
+        'Topic :: System :: Logging',
+        'Typing :: Typed'
     ],
     entry_points = {
         'console_scripts': [
-            'supervisor_stdout = supervisor_stdout:main',
+            'supervisor-console = supervisor_console',
         ]
     }
 )
