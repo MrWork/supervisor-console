@@ -2,7 +2,7 @@
 # -*- coding: iso-8859-1 -*-
 import os
 
-from setuptools import setup, find_namespace_packages
+from setuptools import setup, find_packages
 
 _Version='0.5.0'
 
@@ -17,10 +17,10 @@ setup(
     license = 'BSD-3-Clause',
     keywords = '',
     package_dir={"": "src"},
-    packages=find_namespace_packages(where="src"),
+    packages=find_packages(where="src"),
     url = 'https://github.com/carstencodes/supervisor-console',
     install_requires=[
-        "supervisord >= 4.0"
+        "supervisor >= 4.0"
     ],
     classifiers = [
         'Development Status :: 4 - Beta',
