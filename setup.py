@@ -4,7 +4,7 @@ import os
 
 from setuptools import setup, find_packages
 
-_Version='0.5.0'
+_Version='0.5.2'
 
 setup(
     name = 'supervisor-console',
@@ -41,7 +41,7 @@ setup(
     ],
     entry_points = {
         'console_scripts': [
-            'supervisor-console = supervisor_console',
+            'supervisor-console = supervisor_console.__main__:main',
         ]
     }
 )

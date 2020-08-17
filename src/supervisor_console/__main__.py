@@ -1,5 +1,10 @@
 from .console import ProcessCommunicationEventHandler
 
-if __name__ == '__main__':
+
+def main():
     handler = ProcessCommunicationEventHandler()
     handler.run_forever()
+
+
+if __name__ == '__main__':
+    main()
