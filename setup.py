@@ -4,7 +4,7 @@ import os
 
 from setuptools import setup, find_namespace_packages
 
-_Version='0.4.0'
+_Version='0.5.0'
 
 setup(
     name = 'supervisor-console',
