@@ -28,7 +28,7 @@ An example supervisord.conf:
     stderr_events_enabled = true
 
     [eventlistener:stdout]
-    command = supervisor_console
+    command = /usr/bin/env python3 -m supervisor_console
     buffer_size = 100
     events = PROCESS_LOG
-    result_handler = supervisor_console:event_handler
+    result_handler = supervisor_console.events:event_handler
