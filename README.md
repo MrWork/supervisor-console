@@ -19,9 +19,6 @@ An example supervisord.conf:
     [supervisord]
     nodaemon = true
 
-    [supervisorconsole]
-    logformat= ;; format of the logging. Available variables are `processname`, `timestamp` and `line` 
-
     [program:web]
     command = ...
     stdout_events_enabled = true
@@ -32,3 +29,13 @@ An example supervisord.conf:
     buffer_size = 100
     events = PROCESS_LOG
     result_handler = supervisor_console.events:event_handler
+
+To use a custom log format, add `--format` to the command:
+
+    command = /usr/bin/env python3 -m supervisor_console --format '-> {line}'
+
+Supported placeholders are:
+
+- `{processname}`
+- `{timestamp}`
+- `{line}`
